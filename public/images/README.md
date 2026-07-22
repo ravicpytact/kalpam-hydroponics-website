@@ -25,6 +25,7 @@ Drop new files in repo-root `img/`, then copy into these paths (or ask the agent
 | `IMG-19.webp` | `contact/intro.webp` | Contact page |
 | `IMG-20.webp` | `shared/og-default.webp` | Open Graph |
 | `IMG-21.webp` | `shared/favicon.webp` | Favicon |
+| `IMG-24.webp` | `shared/footer/banyan-branch-shadow.webp` | Footer decor |
 
 ## Placeholders (replace when client provides)
 

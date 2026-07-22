@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { CtaLink } from "@/components/ui/CtaLink";
+import { HOME_CREDIBILITY } from "@/lib/home-content";
 import { HEADER_CTA, PRIMARY_NAV } from "@/lib/nav";
 import { SITE_CONTACT } from "@/lib/site-contact";
 
 export function Footer() {
   const { phone, email, address, serviceArea, whatsapp, privacyUrl } = SITE_CONTACT;
+  const { logos } = HOME_CREDIBILITY;
   const year = new Date().getFullYear();
 
   const whatsappHref = whatsapp
@@ -14,23 +16,47 @@ export function Footer() {
 
   return (
     <footer className="site-footer">
-      <Container>
+      <div className="site-footer__decor" aria-hidden="true">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="site-footer__decor-img site-footer__decor-img--banyan"
+          src="/images/shared/footer/banyan-branch-shadow.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <Container className="site-footer__content">
         <div className="site-footer__inner">
           <div className="site-footer__brand">
             <p className="site-footer__name">KALPAM LANDSCAPING</p>
             <p className="site-footer__tagline">
               Professional landscaping and garden maintenance in {serviceArea}.
             </p>
-            <div className="site-footer__brand-actions">
-              <CtaLink href={HEADER_CTA.href} variant="primary">
-                {HEADER_CTA.label}
-              </CtaLink>
-              {whatsappHref ? (
-                <CtaLink href={whatsappHref} variant="secondary">
-                  Chat on WhatsApp
-                </CtaLink>
+            <Link className="site-footer__text-cta" href={HEADER_CTA.href}>
+              {HEADER_CTA.label} →
+            </Link>
+          </div>
+
+          <div className="site-footer__reach">
+            <p className="site-footer__heading">Get in touch</p>
+            <a className="site-footer__phone-card" href={`tel:${phone.tel}`}>
+              <span className="site-footer__phone-number">{phone.display}</span>
+              <span className="site-footer__phone-hint">Tap to call</span>
+            </a>
+            <ul className="site-footer__reach-list">
+              <li>
+                <span className="site-footer__label">Email</span>
+                <a href={`mailto:${email.mailto}`}>{email.display}</a>
+              </li>
+              {whatsapp && whatsappHref ? (
+                <li>
+                  <span className="site-footer__label">WhatsApp</span>
+                  <a href={whatsappHref}>{whatsapp.display}</a>
+                </li>
               ) : null}
-            </div>
+            </ul>
           </div>
 
           <nav className="site-footer__nav" aria-label="Footer">
@@ -44,23 +70,9 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="site-footer__contact">
-            <p className="site-footer__heading">Contact</p>
-            <ul className="site-footer__contact-list">
-              <li>
-                <span className="site-footer__label">Phone</span>
-                <a href={`tel:${phone.tel}`}>{phone.display}</a>
-              </li>
-              <li>
-                <span className="site-footer__label">Email</span>
-                <a href={`mailto:${email.mailto}`}>{email.display}</a>
-              </li>
-              {whatsapp ? (
-                <li>
-                  <span className="site-footer__label">WhatsApp</span>
-                  <a href={whatsappHref!}>{whatsapp.display}</a>
-                </li>
-              ) : null}
+          <div className="site-footer__visit">
+            <p className="site-footer__heading">Visit us</p>
+            <ul className="site-footer__visit-list">
               <li>
                 <span className="site-footer__label">Address</span>
                 <span>{address.line}</span>
@@ -73,12 +85,30 @@ export function Footer() {
           </div>
         </div>
 
+        {/* DUMMY DATA — fictional logos until client supplies approved assets */}
+        <div className="site-footer__trust" aria-label="Client and partner logos">
+          <p className="site-footer__trust-label">{logos.label}</p>
+          <ul className="site-footer__trust-logos">
+            {logos.items.map((logo) => (
+              <li key={logo.name}>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={48}
+                  loading="lazy"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="site-footer__bottom">
-          <p className="site-footer__copyright">
-            © {year} KALPAM LANDSCAPING
-          </p>
+          <p className="site-footer__copyright">© {year} KALPAM LANDSCAPING</p>
           {privacyUrl ? (
-            <Link href={privacyUrl}>Privacy policy</Link>
+            <div className="site-footer__bottom-links">
+              <Link href={privacyUrl}>Privacy policy</Link>
+            </div>
           ) : null}
         </div>
       </Container>

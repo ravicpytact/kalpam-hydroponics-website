@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
+import { BackToTopButton } from "@/components/layout/BackToTopButton";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PreFooterCta } from "@/components/layout/PreFooterCta";
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <PreFooterCta />
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );
