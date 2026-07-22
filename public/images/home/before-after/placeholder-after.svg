@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="After photo placeholder TBD client">
+  <rect width="800" height="600" fill="#D4E5D0"/>
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#166912" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" fill="#166912">After</text>
+  <text x="400" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5A5A5A">TBD  client photo</text>
+</svg>
