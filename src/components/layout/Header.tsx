@@ -17,8 +17,11 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { phone, email, serviceArea, whatsapp } = SITE_CONTACT;
 
-  const isHome = normalizePath(pathname) === "/";
-  const isOverlay = isHome && !scrolled && !open;
+  const path = normalizePath(pathname);
+  const isOverlay =
+    (path === "/" || path === "/about" || path === "/services" || path === "/process") &&
+    !scrolled &&
+    !open;
 
   const closeMenu = useCallback(() => setOpen(false), []);
 
@@ -62,93 +65,95 @@ export function Header() {
     : null;
 
   return (
-    <header className={headerClass}>
-      <Container>
-        <div className="site-header__inner">
-          <Link href="/" className="site-header__brand" onClick={closeMenu}>
-            <Image
-              src={SITE_LOGO.src}
-              alt=""
-              width={SITE_LOGO.width}
-              height={SITE_LOGO.height}
-              className="site-header__logo"
-              priority
-            />
-            <span className="site-header__brand-text">
-              <span className="site-header__brand-name">KALPAM LANDSCAPING</span>
-              <span className="site-header__brand-region">{serviceArea}</span>
-            </span>
-          </Link>
+    <>
+      <header className={headerClass}>
+        <Container>
+          <div className="site-header__inner">
+            <Link href="/" className="site-header__brand" onClick={closeMenu}>
+              <Image
+                src={SITE_LOGO.src}
+                alt=""
+                width={SITE_LOGO.width}
+                height={SITE_LOGO.height}
+                className="site-header__logo"
+                priority
+              />
+              <span className="site-header__brand-text">
+                <span className="site-header__brand-name">KALPAM LANDSCAPING</span>
+                <span className="site-header__brand-region">{serviceArea}</span>
+              </span>
+            </Link>
 
-          <div className="site-header__desktop">
-            <div className="site-header__pill">
-              <nav className="site-header__nav" aria-label="Primary">
-                <ul>
-                  {PRIMARY_NAV.map((item) => {
-                    const active = isNavActive(pathname, item.href);
-                    return (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={active ? "is-active" : undefined}
-                          aria-current={active ? "page" : undefined}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
+            <div className="site-header__desktop">
+              <div className="site-header__pill">
+                <nav className="site-header__nav" aria-label="Primary">
+                  <ul>
+                    {PRIMARY_NAV.map((item) => {
+                      const active = isNavActive(pathname, item.href);
+                      return (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className={active ? "is-active" : undefined}
+                            aria-current={active ? "page" : undefined}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
 
-              <div className="site-header__actions">
-                {!isOverlay ? (
-                  <a
-                    className="site-header__phone"
-                    href={`tel:${phone.tel}`}
-                    aria-label={`Call ${phone.display}`}
-                  >
-                    <span className="site-header__phone-icon" aria-hidden="true">
-                      ☎
-                    </span>
-                    <span className="site-header__phone-label">{phone.display}</span>
-                  </a>
-                ) : null}
-                {whatsappHref ? (
-                  <CtaLink href={whatsappHref} variant="secondary">
-                    Chat on WhatsApp
+                <div className="site-header__actions">
+                  {!isOverlay ? (
+                    <a
+                      className="site-header__phone"
+                      href={`tel:${phone.tel}`}
+                      aria-label={`Call ${phone.display}`}
+                    >
+                      <span className="site-header__phone-icon" aria-hidden="true">
+                        ☎
+                      </span>
+                      <span className="site-header__phone-label">{phone.display}</span>
+                    </a>
+                  ) : null}
+                  {whatsappHref ? (
+                    <CtaLink href={whatsappHref} variant="secondary">
+                      Chat on WhatsApp
+                    </CtaLink>
+                  ) : null}
+                  <CtaLink href={HEADER_CTA.href} variant="primary">
+                    {HEADER_CTA.label}
                   </CtaLink>
-                ) : null}
-                <CtaLink href={HEADER_CTA.href} variant="primary">
-                  {HEADER_CTA.label}
-                </CtaLink>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="site-header__mobile-bar">
-            {!isOverlay ? (
-              <a
-                className="site-header__phone-btn"
-                href={`tel:${phone.tel}`}
-                aria-label={`Call ${phone.display}`}
+            <div className="site-header__mobile-bar">
+              {!isOverlay ? (
+                <a
+                  className="site-header__phone-btn"
+                  href={`tel:${phone.tel}`}
+                  aria-label={`Call ${phone.display}`}
+                >
+                  <span aria-hidden="true">☎</span>
+                </a>
+              ) : null}
+              <button
+                type="button"
+                className="site-header__menu-btn"
+                aria-expanded={open}
+                aria-controls="mobile-nav"
+                aria-label={open ? "Close menu" : "Open menu"}
+                onClick={() => setOpen((value) => !value)}
               >
-                <span aria-hidden="true">☎</span>
-              </a>
-            ) : null}
-            <button
-              type="button"
-              className="site-header__menu-btn"
-              aria-expanded={open}
-              aria-controls="mobile-nav"
-              aria-label={open ? "Close menu" : "Open menu"}
-              onClick={() => setOpen((value) => !value)}
-            >
-              <span aria-hidden="true">{open ? "✕" : "☰"}</span>
-            </button>
+                <span aria-hidden="true">{open ? "✕" : "☰"}</span>
+              </button>
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </header>
 
       {open ? (
         <button
@@ -164,17 +169,9 @@ export function Header() {
         className={`site-header__panel${open ? " is-open" : ""}`}
         aria-hidden={!open}
       >
-        <Container>
+        <Container className="site-header__panel-container">
           <div className="site-header__panel-head">
             <p className="site-header__panel-title">Menu</p>
-            <button
-              type="button"
-              className="site-header__panel-close"
-              aria-label="Close menu"
-              onClick={closeMenu}
-            >
-              ✕
-            </button>
           </div>
 
           <nav aria-label="Mobile">
@@ -214,6 +211,6 @@ export function Header() {
           </div>
         </Container>
       </div>
-    </header>
+    </>
   );
 }

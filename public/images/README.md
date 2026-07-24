@@ -1,6 +1,6 @@
 # Image asset map
 
-Drop new files in repo-root `img/`, then copy into these paths (or ask the agent to place them). Prefer `.webp`.
+Drop new files in `development/img/`, then copy into these paths (or ask the agent to place them). Prefer `.webp`.
 
 ## Available now
 
@@ -13,13 +13,13 @@ Drop new files in repo-root `img/`, then copy into these paths (or ask the agent
 | `IMG-07.webp` | `services/vertical.webp` | Home services card |
 | `IMG-08.webp` | `services/industrial.webp` | Home services card |
 | `IMG-09.webp` | `services/amc.webp` | Home services card |
+| `IMG-09.webp` (same as card) | `services/amc-hero.webp` | Services AMC block + hero slide (IMG-16 was incorrect; use card asset until client supplies a distinct hero) |
 | `IMG-10.webp` | `home/team-credibility.webp` + `about/team.webp` | Home credibility / About |
 | `IMG-11.webp` | `about/story.webp` | About company story |
 | `IMG-12.webp` | `services/farmhouse-hero.webp` | Services page |
 | `IMG-13.webp` | `services/indoor-hero.webp` | Services page |
 | `IMG-14.webp` | `services/vertical-hero.webp` | Services page |
 | `IMG-15.webp` | `services/industrial-hero.webp` | Services page |
-| `IMG-16.webp` | `services/amc-hero.webp` | Services page |
 | `IMG-17.webp` | `process/overview.webp` | Process page |
 | `IMG-18.webp` | `process/icons.webp` | Process icons sheet |
 | `IMG-19.webp` | `contact/intro.webp` | Contact page |

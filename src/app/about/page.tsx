@@ -1,28 +1,26 @@
-import { Section } from "@/components/ui/Section";
-import { CtaLink } from "@/components/ui/CtaLink";
+import type { Metadata } from "next";
+import { CompanyStoryAbout } from "@/components/sections/about/CompanyStoryAbout";
+import { DifferentiatorAbout } from "@/components/sections/about/DifferentiatorAbout";
+import { HeroAbout } from "@/components/sections/about/HeroAbout";
+import { ProofAbout } from "@/components/sections/about/ProofAbout";
+import { TeamAbout } from "@/components/sections/about/TeamAbout";
+import { ValuesAbout } from "@/components/sections/about/ValuesAbout";
+import { ABOUT_META } from "@/lib/about-content";
+
+export const metadata: Metadata = {
+  title: `${ABOUT_META.title} | KALPAM LANDSCAPING`,
+  description: ABOUT_META.description,
+};
 
 export default function AboutPage() {
   return (
-    <>
-      <h1>About</h1>
-      {/* TODO: sections from info.md / wireframes/about.md */}
-      <Section title="Company Story">
-        <p>TODO: origin story, focus, service area TBD, client</p>
-        <CtaLink href="/contact/">Tell Us About Your Property</CtaLink>
-      </Section>
-      <Section title="Horticulturist-Led Team">
-        <p>TODO: team overview and roles, credentials TBD, client</p>
-      </Section>
-      <Section title="How Kalpam Works Differently">
-        <p>TODO: scientific assessment differentiation</p>
-        <CtaLink href="/process/">See Our Working Process</CtaLink>
-      </Section>
-      <Section title="Values and Service Promise">
-        <p>TODO: values list, warranty wording TBD, client</p>
-      </Section>
-      <Section title="Proof and Trust">
-        <p>TODO: reviews, logos, stats, testimonials TBD, client</p>
-      </Section>
-    </>
+    <div className="about-page">
+      <HeroAbout />
+      <CompanyStoryAbout />
+      <TeamAbout />
+      <DifferentiatorAbout />
+      <ValuesAbout />
+      <ProofAbout />
+    </div>
   );
 }

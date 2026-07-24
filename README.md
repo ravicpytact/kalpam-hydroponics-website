@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run start` | Serve production build |
 | `npm run lint` | ESLint |
 
-## Routes (from `info.md`)
+## Routes (from `development/info.md`)
 
 | Page | URL | File |
 | --- | --- | --- |
@@ -33,6 +33,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 website/
+├── development/             # wireframes, info.md, skills, scripts, img/
 ├── public/images|icons|fonts
 ├── src/app/                 # routes only
 ├── src/components/layout/   # Header, Footer, Container
@@ -41,6 +42,8 @@ website/
 ├── src/lib/
 └── src/types/
 ```
+
+See `development/README.md` for planning assets and Cursor skills.
 
 ## Stage status
 

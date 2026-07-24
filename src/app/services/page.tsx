@@ -1,34 +1,26 @@
-import { Section } from "@/components/ui/Section";
-import { CtaLink } from "@/components/ui/CtaLink";
+import type { Metadata } from "next";
+import { HeroServices } from "@/components/sections/services/HeroServices";
+import { ServiceLineSection } from "@/components/sections/services/ServiceLineSection";
+import { ServicesEnquiry } from "@/components/sections/services/ServicesEnquiry";
+import { SERVICE_LINES, SERVICES_META } from "@/lib/services-content";
+
+export const metadata: Metadata = {
+  title: `${SERVICES_META.title} | KALPAM LANDSCAPING`,
+  description: SERVICES_META.description,
+};
 
 export default function ServicesPage() {
   return (
-    <>
-      <h1>Services</h1>
-      {/* TODO: sections from info.md / wireframes/services.md */}
-      <Section title="Services Introduction">
-        <p>TODO: overview for residential, commercial, industrial, farmhouse, public-sector</p>
-        <CtaLink href="/contact/">Request a Site Assessment</CtaLink>
-      </Section>
-      <Section title="Farmhouse Garden Development">
-        <p>TODO: service details</p>
-      </Section>
-      <Section title="Indoor Office and Home Gardens">
-        <p>TODO: service details, AMC terms TBD, client</p>
-      </Section>
-      <Section title="Vertical Gardens">
-        <p>TODO: service details</p>
-      </Section>
-      <Section title="Industrial Gardens">
-        <p>TODO: service details</p>
-      </Section>
-      <Section title="Annual Maintenance Contracts">
-        <p>TODO: AMC details, terms TBD, client</p>
-      </Section>
-      <Section title="Service Enquiry">
-        <p>TODO: enquiry prompt + form/WhatsApp pathways</p>
-        <CtaLink href="/contact/">Get a Customized Recommendation</CtaLink>
-      </Section>
-    </>
+    <div className="services-page">
+      <HeroServices />
+      {SERVICE_LINES.map((service, index) => (
+        <ServiceLineSection
+          key={service.id}
+          service={service}
+          reverse={index % 2 === 1}
+        />
+      ))}
+      <ServicesEnquiry />
+    </div>
   );
 }

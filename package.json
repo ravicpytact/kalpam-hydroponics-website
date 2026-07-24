@@ -10,7 +10,7 @@
     "test:slider": "node tests/before-after-slider.spec.mjs"
   },
   "dependencies": {
-    "next": "16.2.10",
+    "next": "16.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
@@ -19,8 +19,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.2.11",
     "puppeteer": "^23.11.1",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "puppeteer@23.11.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
   }
 }
