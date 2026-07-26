@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { ProcessJourneyIcon } from "@/components/sections/process/ProcessJourneyIcon";
 import { PROCESS_JOURNEY } from "@/lib/process-content";
 
 export function ProcessJourney() {
-  const { title, caption, phases, crossLinks } = PROCESS_JOURNEY;
+  const { eyebrow, title, caption, phases, crossLinks } = PROCESS_JOURNEY;
 
   return (
     <section
@@ -13,17 +14,26 @@ export function ProcessJourney() {
     >
       <Container>
         <header className="process-journey__header">
+          <p className="about-story__eyebrow">{eyebrow}</p>
           <h2 id="process-journey-heading" className="about-story__title">
             {title}
           </h2>
           <p className="about-story__lead">{caption}</p>
         </header>
 
-        <ol className="process-journey__phases" aria-label="Process phases">
+        <ol className="process-journey__stepper" aria-label="Process phases">
           {phases.map((phase, index) => (
-            <li key={phase.id} className="process-journey__phase">
-              <span className="process-journey__phase-marker">{index + 1}</span>
-              <span className="process-journey__phase-label">{phase.label}</span>
+            <li key={phase.id} className="process-journey__step">
+              <article className="process-journey__card">
+                <div className="process-journey__icon-ring">
+                  <ProcessJourneyIcon phaseId={phase.id} />
+                </div>
+                <p className="process-journey__step-num" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="process-journey__label">{phase.label}</h3>
+                <p className="process-journey__desc">{phase.description}</p>
+              </article>
             </li>
           ))}
         </ol>

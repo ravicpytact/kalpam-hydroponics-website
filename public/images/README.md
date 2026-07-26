@@ -21,7 +21,7 @@ Drop new files in `development/img/`, then copy into these paths (or ask the age
 | `IMG-14.webp` | `services/vertical-hero.webp` | Services page |
 | `IMG-15.webp` | `services/industrial-hero.webp` | Services page |
 | `IMG-17.webp` | `process/overview.webp` | Process page |
-| `IMG-18.webp` | `process/icons.webp` | Process icons sheet |
+| `IMG-18.webp` | `process/icons.webp` | Optional reference art; journey UI uses **Lucide** icons in code |
 | `IMG-19.webp` | `contact/intro.webp` | Contact page |
 | `IMG-20.webp` | `shared/og-default.webp` | Open Graph |
 | `IMG-21.webp` | `shared/favicon.webp` | Favicon |

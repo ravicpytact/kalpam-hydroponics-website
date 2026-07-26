@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import { BackToTopButton } from "@/components/layout/BackToTopButton";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PreFooterCta } from "@/components/layout/PreFooterCta";
+import { ScrollToTopOnNavigate } from "@/components/layout/ScrollToTopOnNavigate";
+import { SiteJsonLd } from "@/components/layout/SiteJsonLd";
+import { rootMetadata } from "@/lib/seo-metadata";
 import "./globals.css";
 
 const display = Libre_Baskerville({
@@ -19,20 +21,7 @@ const body = Source_Sans_3({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "KALPAM LANDSCAPING",
-  description:
-    "Trusted professional landscaping and garden maintenance for homes, offices, farmhouses, residential societies, commercial properties, industries, and public-sector environments.",
-  icons: {
-    icon: [{ url: "/images/shared/favicon.webp", type: "image/webp" }],
-  },
-  openGraph: {
-    title: "KALPAM LANDSCAPING",
-    description:
-      "Trusted professional landscaping and garden maintenance for homes, offices, farmhouses, and more.",
-    images: [{ url: "/images/shared/og-default.webp" }],
-  },
-};
+export const metadata = rootMetadata();
 
 export default function RootLayout({
   children,
@@ -42,6 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
+        <SiteJsonLd />
+        <ScrollToTopOnNavigate />
         <a className="skip-link" href="#main">
           Skip to main content
         </a>

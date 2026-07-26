@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ArrowRight,
+  Globe,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { HOME_CREDIBILITY } from "@/lib/home-content";
 import { HEADER_CTA, PRIMARY_NAV } from "@/lib/nav";
+import { SITE_CREDIT } from "@/lib/site-brand";
 import { SITE_CONTACT } from "@/lib/site-contact";
 
 export function Footer() {
@@ -35,25 +44,35 @@ export function Footer() {
               Professional landscaping and garden maintenance in {serviceArea}.
             </p>
             <Link className="site-footer__text-cta" href={HEADER_CTA.href}>
-              {HEADER_CTA.label} →
+              {HEADER_CTA.label}
+              <ArrowRight className="site-footer__cta-icon" size={18} aria-hidden />
             </Link>
           </div>
 
           <div className="site-footer__reach">
             <p className="site-footer__heading">Get in touch</p>
             <a className="site-footer__phone-card" href={`tel:${phone.tel}`}>
-              <span className="site-footer__phone-number">{phone.display}</span>
-              <span className="site-footer__phone-hint">Tap to call</span>
+              <Phone className="site-footer__icon site-footer__icon--accent" size={22} aria-hidden />
+              <span className="site-footer__phone-body">
+                <span className="site-footer__phone-number">{phone.display}</span>
+                <span className="site-footer__phone-hint">Tap to call</span>
+              </span>
             </a>
             <ul className="site-footer__reach-list">
               <li>
-                <span className="site-footer__label">Email</span>
-                <a href={`mailto:${email.mailto}`}>{email.display}</a>
+                <Mail className="site-footer__icon" size={20} aria-hidden />
+                <div>
+                  <span className="site-footer__label">Email</span>
+                  <a href={`mailto:${email.mailto}`}>{email.display}</a>
+                </div>
               </li>
               {whatsapp && whatsappHref ? (
                 <li>
-                  <span className="site-footer__label">WhatsApp</span>
-                  <a href={whatsappHref}>{whatsapp.display}</a>
+                  <MessageCircle className="site-footer__icon" size={20} aria-hidden />
+                  <div>
+                    <span className="site-footer__label">WhatsApp</span>
+                    <a href={whatsappHref}>{whatsapp.display}</a>
+                  </div>
                 </li>
               ) : null}
             </ul>
@@ -74,12 +93,18 @@ export function Footer() {
             <p className="site-footer__heading">Visit us</p>
             <ul className="site-footer__visit-list">
               <li>
-                <span className="site-footer__label">Address</span>
-                <span>{address.line}</span>
+                <MapPin className="site-footer__icon" size={20} aria-hidden />
+                <div>
+                  <span className="site-footer__label">Address</span>
+                  <span>{address.line}</span>
+                </div>
               </li>
               <li>
-                <span className="site-footer__label">Service area</span>
-                <span>{serviceArea}</span>
+                <Globe className="site-footer__icon" size={20} aria-hidden />
+                <div>
+                  <span className="site-footer__label">Service area</span>
+                  <span>{serviceArea}</span>
+                </div>
               </li>
             </ul>
           </div>
@@ -104,12 +129,33 @@ export function Footer() {
         </div>
 
         <div className="site-footer__bottom">
-          <p className="site-footer__copyright">© {year} KALPAM LANDSCAPING</p>
-          {privacyUrl ? (
-            <div className="site-footer__bottom-links">
-              <Link href={privacyUrl}>Privacy policy</Link>
-            </div>
-          ) : null}
+          <div className="site-footer__meta">
+            <p className="site-footer__copyright">© {year} KALPAM LANDSCAPING</p>
+            {privacyUrl ? (
+              <>
+                <span className="site-footer__meta-sep" aria-hidden="true">
+                  ·
+                </span>
+                <Link className="site-footer__meta-link" href={privacyUrl}>
+                  Privacy policy
+                </Link>
+              </>
+            ) : null}
+            <span className="site-footer__meta-sep" aria-hidden="true">
+              ·
+            </span>
+            <p className="site-footer__credit">
+              {SITE_CREDIT.label}{" "}
+              <a
+                className="site-footer__credit-link"
+                href={SITE_CREDIT.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {SITE_CREDIT.name}
+              </a>
+            </p>
+          </div>
         </div>
       </Container>
     </footer>

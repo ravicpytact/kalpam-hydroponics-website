@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { HeroServices } from "@/components/sections/services/HeroServices";
 import { ServiceLineSection } from "@/components/sections/services/ServiceLineSection";
 import { ServicesEnquiry } from "@/components/sections/services/ServicesEnquiry";
 import { SERVICE_LINES, SERVICES_META } from "@/lib/services-content";
+import { pageMetadata } from "@/lib/seo-metadata";
 
-export const metadata: Metadata = {
-  title: `${SERVICES_META.title} | KALPAM LANDSCAPING`,
+export const metadata = pageMetadata({
+  pathname: "/services/",
+  title: SERVICES_META.title,
   description: SERVICES_META.description,
-};
+});
 
 export default function ServicesPage() {
   return (

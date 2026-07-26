@@ -6,3 +6,10 @@ export const SITE_LOGO = {
   width: 256,
   height: 256,
 } as const;
+
+/** Site build credit — footer only */
+export const SITE_CREDIT = {
+  label: "Created by",
+  name: "pytact",
+  href: "https://pytact.com",
+} as const;

@@ -9,6 +9,7 @@ export const ABOUT_META = {
 } as const;
 
 export const ABOUT_HERO = {
+  eyebrow: "Who we are",
   headline: {
     lead: "About",
     line: "Kalpam Landscaping",

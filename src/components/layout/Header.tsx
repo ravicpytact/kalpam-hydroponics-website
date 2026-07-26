@@ -19,7 +19,11 @@ export function Header() {
 
   const path = normalizePath(pathname);
   const isOverlay =
-    (path === "/" || path === "/about" || path === "/services" || path === "/process") &&
+    (path === "/" ||
+      path === "/about" ||
+      path === "/services" ||
+      path === "/process" ||
+      path === "/contact") &&
     !scrolled &&
     !open;
 
@@ -31,6 +35,11 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+    setScrolled(window.scrollY > 48);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -131,15 +140,6 @@ export function Header() {
             </div>
 
             <div className="site-header__mobile-bar">
-              {!isOverlay ? (
-                <a
-                  className="site-header__phone-btn"
-                  href={`tel:${phone.tel}`}
-                  aria-label={`Call ${phone.display}`}
-                >
-                  <span aria-hidden="true">☎</span>
-                </a>
-              ) : null}
               <button
                 type="button"
                 className="site-header__menu-btn"

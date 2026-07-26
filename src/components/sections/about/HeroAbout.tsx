@@ -25,6 +25,7 @@ export function HeroAbout() {
       <div className="home-hero__overlay">
         <Container>
           <div className="home-hero__content">
+            <p className="home-hero__eyebrow">{ABOUT_HERO.eyebrow}</p>
             <h1 id="about-hero-heading">
               {ABOUT_HERO.headline.lead}{" "}
               <span className="home-hero__headline-line">{ABOUT_HERO.headline.line}</span>

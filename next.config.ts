@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /** Match internal nav links (`/about/`) and canonical URLs. */
+  trailingSlash: true,
 };
 
 export default nextConfig;

@@ -21,15 +21,36 @@ export const PROCESS_HERO = {
 } as const;
 
 export const PROCESS_JOURNEY = {
+  eyebrow: "The path",
   title: "Your journey",
   caption:
     "Enquiry starts the conversation through contact. Steps 1–4 below cover assessment through aftercare.",
   phases: [
-    { id: "enquiry", label: "Enquiry" },
-    { id: "assessment", label: "Assessment" },
-    { id: "recommendation", label: "Recommendation" },
-    { id: "execution", label: "Execution" },
-    { id: "aftercare", label: "Aftercare" },
+    {
+      id: "enquiry",
+      label: "Enquiry",
+      description: "Share your property, goals, and service interest.",
+    },
+    {
+      id: "assessment",
+      label: "Assessment",
+      description: "Review site conditions, light, soil, and access.",
+    },
+    {
+      id: "recommendation",
+      label: "Recommendation",
+      description: "Plans, planting, irrigation, and agreed scope.",
+    },
+    {
+      id: "execution",
+      label: "Execution",
+      description: "Installation with trained team and oversight.",
+    },
+    {
+      id: "aftercare",
+      label: "Aftercare",
+      description: "Handover, care guidance, and maintenance options.",
+    },
   ],
   crossLinks: [
     { href: "/services/", label: "See our service lines" },
