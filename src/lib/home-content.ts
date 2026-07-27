@@ -9,6 +9,9 @@ export const HOME_HERO = {
   },
   support:
     "For homes, offices, farmhouses, residential societies, commercial properties, industries, and public-sector environments, designed, developed, and maintained with horticultural expertise.",
+  video: {
+    src: "/videos/home-hero.mp4",
+  },
   image: {
     src: "/images/home/hero.webp",
     alt: "Completed professional landscaping project with layered planting and lawn",
@@ -40,10 +43,9 @@ export const HOME_CREDIBILITY = {
     },
     {
       id: "google-rating",
-      value: "4.8",
+      value: "5.0",
       label: "Google rating",
-      detail: "120+ reviews",
-      // DUMMY DATA — rating and review count pending client verification before publication.
+      detail: "31 reviews",
     },
     {
       id: "horticulturist",
@@ -69,11 +71,10 @@ export const HOME_CREDIBILITY = {
   featuredReview: {
     rating: 5,
     quote:
-      "Kalpam planned our garden around soil and light conditions, then maintained it reliably through the seasons.",
-    author: "Residential client",
+      "Kalpam Landscaping truly stands out with their creativity, professionalism, and dedication. The team doesn't just build gardens – they transform spaces into living artworks that feel refreshing and inspiring. Every detail, from design planning to execution, was handled with care and precision. I was especially impressed with their innovative ideas and timely service. If you're looking for a landscaping company that delivers more than just plants – but a complete experience of beauty, quality, and trust – Kalpam Landscaping is the name to go with.",
+    author: "Rambha Vaghela",
     location: "Surat",
     source: "Google",
-    // DUMMY DATA — replace with a verified Google review excerpt when the client approves.
   },
   logos: {
     label: "Trusted by clients and partners",
@@ -273,26 +274,8 @@ export const HOME_TESTIMONIALS = {
   title: "Testimonials and Final Enquiry",
   reassurance:
     "Recommendations are customized to site conditions, with reliable maintenance options where suitable.",
-  note: "Layout dummy quotes: replace with client-approved testimonials and attribution before launch.",
-  items: [
-    {
-      quote:
-        "The team explained soil and plant choices in plain language, then delivered a garden that still looks healthy months later.",
-      name: "A. Sharma",
-      context: "Homeowner, residential garden (dummy)",
-    },
-    {
-      quote:
-        "They measured light before recommending indoor plants for our office. Care instructions were clear and practical.",
-      name: "R. Mehta",
-      context: "Office manager, indoor planting (dummy)",
-    },
-    {
-      quote:
-        "From assessment to installation, communication was steady. Maintenance options were explained without pressure.",
-      name: "Society committee member",
-      context: "Residential society landscape (dummy)",
-    },
-  ],
-  cta: { href: "/contact/", label: "Get a Landscaping Consultation" },
+  cta: {
+    href: "https://www.google.com/search?q=kalpam+landscaping",
+    label: "View All Google Reviews",
+  },
 } as const;

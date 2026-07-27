@@ -76,7 +76,6 @@ export function CredibilityHome() {
               ))}
             </ul>
 
-            {/* DUMMY DATA — featuredReview content pending client verification */}
             <blockquote className="home-credibility__review">
               <StarRating rating={featuredReview.rating} />
               <p>&ldquo;{featuredReview.quote}&rdquo;</p>

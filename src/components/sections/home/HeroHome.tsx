@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Container } from "@/components/layout/Container";
+import { HeroHomeMedia } from "@/components/sections/home/HeroHomeMedia";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { HOME_HERO } from "@/lib/home-content";
 import { SITE_CONTACT } from "@/lib/site-contact";
@@ -13,14 +13,7 @@ export function HeroHome() {
   return (
     <section className="home-hero" aria-labelledby="home-hero-heading">
       <div className="home-hero__media">
-        <Image
-          src={HOME_HERO.image.src}
-          alt={HOME_HERO.image.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="home-hero__img"
-        />
+        <HeroHomeMedia src={HOME_HERO.video.src} />
       </div>
       <div className="home-hero__overlay">
         <Container>
