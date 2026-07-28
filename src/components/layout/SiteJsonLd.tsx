@@ -22,6 +22,7 @@ export function SiteJsonLd() {
           addressLocality: "Surat",
           addressRegion: "Gujarat",
           addressCountry: "IN",
+          postalCode: SITE_CONTACT.address.postalCode,
           streetAddress: SITE_CONTACT.address.line,
         },
         areaServed: SITE_CONTACT.serviceArea,

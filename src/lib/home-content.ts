@@ -4,8 +4,8 @@
 
 export const HOME_HERO = {
   headline: {
-    lead: "Trusted professional",
-    line: "landscaping and garden maintenance",
+    lead: "Professional landscaping",
+    line: "garden development and maintenance",
   },
   support:
     "For homes, offices, farmhouses, residential societies, commercial properties, industries, and public-sector environments, designed, developed, and maintained with horticultural expertise.",
@@ -21,7 +21,7 @@ export const HOME_HERO = {
     href: "#",
     label: "Chat on WhatsApp",
     disabled: true,
-    note: "WhatsApp number TBD, client",
+    note: "Uses WhatsApp from site-contact.ts when configured",
   },
 } as const;
 
@@ -37,9 +37,8 @@ export const HOME_CREDIBILITY = {
   metrics: [
     {
       id: "experience",
-      value: "4–10 years",
+      value: "5 years",
       label: "Operating experience",
-      // DUMMY DATA — exact years wording pending client confirmation (info.md allows 4–10 range).
     },
     {
       id: "google-rating",
@@ -48,14 +47,14 @@ export const HOME_CREDIBILITY = {
       detail: "31 reviews",
     },
     {
+      id: "projects-completed",
+      value: "400+",
+      label: "Projects completed",
+    },
+    {
       id: "horticulturist",
       value: "Horticulturist-led",
       label: "Planning approach",
-    },
-    {
-      id: "service-area",
-      value: "Surat",
-      label: "Gujarat, India",
     },
   ],
   proofCards: [
@@ -78,43 +77,73 @@ export const HOME_CREDIBILITY = {
   },
   logos: {
     label: "Trusted by clients and partners",
-    // DUMMY DATA — fictional client/partner names and wordmark SVGs until client supplies real logos.
     items: [
       {
-        name: "Vesu Greens Housing",
+        id: "dharmanandan-diamond",
+        title: "Dharmanandan Diamond",
+        subtitle: "Pvt. Ltd.",
         role: "client",
-        src: "/images/shared/logos/dummy/vesu-greens-housing.svg",
-        alt: "Vesu Greens Housing (dummy client logo)",
       },
       {
-        name: "Saurashtra Farm Retreat",
+        id: "anjali-lab-tech-diamond",
+        title: "Anjali Lab Tech",
+        subtitle: "Diamond",
         role: "client",
-        src: "/images/shared/logos/dummy/saurashtra-farm-retreat.svg",
-        alt: "Saurashtra Farm Retreat (dummy client logo)",
       },
       {
-        name: "Gujarat BuildWorks",
-        role: "partner",
-        src: "/images/shared/logos/dummy/gujarat-buildworks.svg",
-        alt: "Gujarat BuildWorks (dummy partner logo)",
-      },
-      {
-        name: "Coastal Office Parks",
+        id: "surat-commissioner-bunglow",
+        title: "Surat Commitioner",
+        subtitle: "Bunglow",
         role: "client",
-        src: "/images/shared/logos/dummy/coastal-office-parks.svg",
-        alt: "Coastal Office Parks (dummy client logo)",
       },
       {
-        name: "Vesu Tech Campus",
+        id: "shalu-dyeing",
+        title: "Shalu Dyeing",
+        subtitle: "O.P. Farm",
         role: "client",
-        src: "/images/shared/logos/dummy/vesu-tech-campus.svg",
-        alt: "Vesu Tech Campus (dummy client logo)",
       },
       {
-        name: "Surat Industrial Greens",
-        role: "partner",
-        src: "/images/shared/logos/dummy/surat-industrial-greens.svg",
-        alt: "Surat Industrial Greens (dummy partner logo)",
+        id: "dee-beers-group",
+        title: "Dee Beers Group",
+        role: "client",
+      },
+      {
+        id: "bhavik-koladiya",
+        title: "Bhavik Koladiya",
+        subtitle: "Founder · BharatPe",
+        role: "client",
+      },
+      {
+        id: "uphoria",
+        title: "Uphoria",
+        subtitle: "The fine dine",
+        role: "client",
+      },
+      {
+        id: "dhanlaxmi-diamond",
+        title: "Dhanlaxmi Diamond",
+        role: "client",
+      },
+      {
+        id: "unique-diamond",
+        title: "Unique Diamond",
+        role: "client",
+      },
+      {
+        id: "magppie-wellness",
+        title: "Magppie Wellness",
+        subtitle: "Kitchens",
+        role: "client",
+      },
+      {
+        id: "ar-haresh-mahadevwala",
+        title: "Ar. Haresh Mahadevwala",
+        role: "client",
+      },
+      {
+        id: "ar-sarosh-wadia",
+        title: "Ar. Sarosh Wadia",
+        role: "client",
       },
     ],
   },

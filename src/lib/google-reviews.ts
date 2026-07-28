@@ -60,16 +60,16 @@ export const GOOGLE_REVIEWS: readonly GoogleReview[] = [
       "Got my new home's balcony design from Kalpam landscaping. Been a very good experience, right choice of plants and sustainable guidance. Thanks 😊",
     source: "Google",
   },
-  // {
-  //   id: "patel-mitesh",
-  //   author: "Patel Mitesh",
-  //   rating: 5,
-  //   postedAgo: "a year ago",
-  //   badge: "8 reviews",
-  //   quote:
-  //     "It has been great experience with kalpam landscaping. Its service was amazing. Especially vandan italia has good knowledge and experience whenever i have any kind of questions. He always ready to provide me genuine answer with explanations. If anyone looking any kind landscaping or hydroponic related work, I would highly recommend to kalpam landscaping.",
-  //   source: "Google",
-  // },
+  {
+    id: "patel-mitesh",
+    author: "Patel Mitesh",
+    rating: 5,
+    postedAgo: "a year ago",
+    badge: "8 reviews",
+    quote:
+      "It has been great experience with kalpam landscaping. Its service was amazing. Especially vandan italia has good knowledge and experience whenever i have any kind of questions. He always ready to provide me genuine answer with explanations. If anyone looking any kind landscaping or hydroponic related work, I would highly recommend to kalpam landscaping.",
+    source: "Google",
+  },
   {
     id: "vivek-akbari",
     author: "Vivek Akbari",

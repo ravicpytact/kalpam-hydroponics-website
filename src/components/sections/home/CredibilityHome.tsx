@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { Section } from "@/components/ui/Section";
+import { ClientLogosMarquee } from "@/components/sections/home/ClientLogosMarquee";
 import { HOME_CREDIBILITY } from "@/lib/home-content";
 
 function StarRating({ rating }: { rating: number }) {
@@ -89,17 +90,16 @@ export function CredibilityHome() {
           </div>
         </div>
 
-        {/* DUMMY DATA — fictional client/partner wordmarks until client supplies real logos */}
         <div className="home-credibility__logos">
-          <p className="home-credibility__logos-label">{logos.label}</p>
-          <ul>
-            {logos.items.map((logo) => (
-              <li key={logo.name}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={logo.src} alt={logo.alt} width={200} height={64} loading="lazy" />
-              </li>
-            ))}
-          </ul>
+          <p className="home-credibility__logos-label" id="home-credibility-logos-label">
+            {logos.label}
+          </p>
+          <ClientLogosMarquee
+            items={logos.items}
+            label={logos.label}
+            secondsPerItem={9}
+            variant="credibility"
+          />
         </div>
 
         <div className="home-credibility__cta">

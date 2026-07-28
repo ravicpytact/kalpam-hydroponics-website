@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -9,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { ClientLogosMarquee } from "@/components/sections/home/ClientLogosMarquee";
 import { HOME_CREDIBILITY } from "@/lib/home-content";
 import { HEADER_CTA, PRIMARY_NAV } from "@/lib/nav";
 import { SITE_CREDIT } from "@/lib/site-brand";
@@ -41,7 +41,7 @@ export function Footer() {
           <div className="site-footer__brand">
             <p className="site-footer__name">KALPAM LANDSCAPING</p>
             <p className="site-footer__tagline">
-              Professional landscaping and garden maintenance in {serviceArea}.
+              Professional landscaping, garden development and maintenance in {serviceArea}.
             </p>
             <Link className="site-footer__text-cta" href={HEADER_CTA.href}>
               {HEADER_CTA.label}
@@ -110,22 +110,14 @@ export function Footer() {
           </div>
         </div>
 
-        {/* DUMMY DATA — fictional logos until client supplies approved assets */}
-        <div className="site-footer__trust" aria-label="Client and partner logos">
+        <div className="site-footer__trust">
           <p className="site-footer__trust-label">{logos.label}</p>
-          <ul className="site-footer__trust-logos">
-            {logos.items.map((logo) => (
-              <li key={logo.name}>
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={160}
-                  height={48}
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
+          <ClientLogosMarquee
+            items={logos.items}
+            label={logos.label}
+            secondsPerItem={9}
+            variant="footer"
+          />
         </div>
 
         <div className="site-footer__bottom">

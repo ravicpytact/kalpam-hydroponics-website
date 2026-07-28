@@ -4,7 +4,7 @@ import { absoluteUrl, getSiteUrl } from "@/lib/site-url";
 export const SITE_NAME = "KALPAM LANDSCAPING";
 
 export const DEFAULT_DESCRIPTION =
-  "Trusted professional landscaping and garden maintenance for homes, offices, farmhouses, residential societies, commercial properties, industries, and public-sector environments.";
+  "Professional landscaping — garden development and maintenance for homes, offices, farmhouses, residential societies, commercial properties, industries, and public-sector environments.";
 
 const OG_IMAGE = "/images/shared/og-default.webp";
 
