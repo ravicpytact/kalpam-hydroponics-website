@@ -13,7 +13,7 @@ export const SITE_CONTACT = {
   email: {
     display: "kalpamhorti@gmail.com",
     mailto: "kalpamhorti@gmail.com",
-    /** Form submission recipient (Resend/Brevo) */
+    /** Default enquiry recipient when CONTACT_FORM_TO is not set in env */
     formRecipient: "kalpamhorti@gmail.com",
   },
   address: {

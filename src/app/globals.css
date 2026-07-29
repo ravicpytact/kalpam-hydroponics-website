@@ -3092,6 +3092,27 @@ main:has(.contact-page) {
   background: var(--color-surface);
 }
 
+.contact-form__field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  line-height: 1.5;
+  cursor: pointer;
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%235A5A5A' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 1rem 1rem;
+}
+
+.contact-form__field--invalid select {
+  background-color: rgb(180 40 40 / 4%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%238b2020' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 1rem 1rem;
+}
+
 .contact-form__field textarea {
   min-height: 8rem;
   resize: vertical;
@@ -3102,6 +3123,34 @@ main:has(.contact-page) {
 .contact-form__field textarea:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+.contact-form__field--invalid input,
+.contact-form__field--invalid select,
+.contact-form__field--invalid textarea {
+  border-color: #b42828;
+}
+
+.contact-form__field--invalid input,
+.contact-form__field--invalid textarea {
+  background: rgb(180 40 40 / 4%);
+}
+
+.contact-form__field--invalid input:focus-visible,
+.contact-form__field--invalid select:focus-visible,
+.contact-form__field--invalid textarea:focus-visible {
+  outline-color: #b42828;
+}
+
+.contact-form__field-message {
+  margin: var(--space-1) 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #8b2020;
+}
+
+.contact-form__field--checkbox.contact-form__field--invalid label {
+  color: var(--color-text);
 }
 
 .contact-form__row {
@@ -3161,7 +3210,7 @@ main:has(.contact-page) {
   }
 }
 
-.contact-form__error {
+.contact-form__form-error {
   margin: 0 0 var(--space-4);
   padding: var(--space-3);
   border-radius: var(--radius-md);

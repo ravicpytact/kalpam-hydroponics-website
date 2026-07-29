@@ -67,12 +67,33 @@ export const CONTACT_FORM = {
   submitLabel: "Submit Your Enquiry",
   honeypotLabel: "Leave this field empty",
   errors: {
+    nameRequired: "Name is required.",
+    emailInvalid: "Enter a valid email address.",
     contactMethod: "Enter an email address or phone number so we can reach you.",
+    serviceRequired: "Select a service interest.",
+    locationRequired: "Project location is required.",
+    messageRequired: "Message or site requirement is required.",
+    consentRequired: "Please agree to be contacted about your enquiry.",
     generic: "Please check the highlighted fields and try again.",
+    submitFailed:
+      "We could not send your enquiry right now. Please try again or contact us by phone or WhatsApp.",
+  },
+  confirmationEmail: {
+    subject: "Thank you for contacting Kalpam Landscaping",
+    intro: "Thank you for reaching out to Kalpam Landscaping. We have received your enquiry.",
+    followUp:
+      "Our team will review the details you shared and contact you soon using the email or phone number you provided.",
+    summaryHeading: "Your enquiry summary",
+    summaryService: "Service",
+    summaryLocation: "Location",
+    contactHeading: "Need to reach us sooner?",
+    signOff: "Kalpam Landscaping",
   },
   success: {
     title: "Thank you — your enquiry was received.",
-    body: "Success message wording and email delivery — TBD — client (form backend in a later stage). We will review what you shared and follow up when appropriate.",
+    body: "Our team will review what you shared and follow up using the email or phone number you provided.",
+    bodyWithConfirmation:
+      "We have also sent a confirmation to your email address. Our team will review what you shared and contact you soon.",
   },
 } as const;
 

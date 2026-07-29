@@ -97,7 +97,7 @@ export function CredibilityHome() {
           <ClientLogosMarquee
             items={logos.items}
             label={logos.label}
-            secondsPerItem={9}
+            secondsPerItem={2}
             variant="credibility"
           />
         </div>

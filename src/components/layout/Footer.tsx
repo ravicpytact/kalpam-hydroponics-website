@@ -115,7 +115,7 @@ export function Footer() {
           <ClientLogosMarquee
             items={logos.items}
             label={logos.label}
-            secondsPerItem={9}
+            secondsPerItem={2}
             variant="footer"
           />
         </div>
