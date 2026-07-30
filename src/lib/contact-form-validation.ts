@@ -6,8 +6,7 @@ export type ContactFormField =
   | "phone"
   | "serviceInterest"
   | "projectLocation"
-  | "message"
-  | "consent";
+  | "message";
 
 export type ContactFormValues = {
   name: string;
@@ -16,7 +15,6 @@ export type ContactFormValues = {
   serviceInterest: string;
   projectLocation: string;
   message: string;
-  consent: boolean;
 };
 
 export type ContactFormFieldErrors = Partial<Record<ContactFormField, string>>;
@@ -85,11 +83,6 @@ export function validateContactFormField(
         errors.message = CONTACT_FORM.errors.messageRequired;
       }
       break;
-    case "consent":
-      if (!values.consent) {
-        errors.consent = CONTACT_FORM.errors.consentRequired;
-      }
-      break;
   }
 
   return errors;
@@ -125,10 +118,6 @@ export function validateContactForm(values: ContactFormValues): ContactFormField
     errors.message = CONTACT_FORM.errors.messageRequired;
   }
 
-  if (!values.consent) {
-    errors.consent = CONTACT_FORM.errors.consentRequired;
-  }
-
   return errors;
 }
 
@@ -139,7 +128,6 @@ const FIELD_IDS: Record<ContactFormField, string> = {
   serviceInterest: "contact-service",
   projectLocation: "contact-location",
   message: "contact-message",
-  consent: "contact-consent",
 };
 
 export function getFirstInvalidFieldId(errors: ContactFormFieldErrors): string | null {
@@ -150,7 +138,6 @@ export function getFirstInvalidFieldId(errors: ContactFormFieldErrors): string |
     "serviceInterest",
     "projectLocation",
     "message",
-    "consent",
   ];
 
   for (const field of order) {
@@ -172,6 +159,5 @@ export function readContactFormValues(form: HTMLFormElement): ContactFormValues 
     serviceInterest: String(data.get("serviceInterest") ?? "").trim(),
     projectLocation: String(data.get("projectLocation") ?? "").trim(),
     message: String(data.get("message") ?? "").trim(),
-    consent: data.get("consent") === "on",
   };
 }

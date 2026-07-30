@@ -38,11 +38,6 @@ export const CONTACT_FORM = {
     serviceInterest: { label: "Service interest", required: true },
     projectLocation: { label: "Project location", required: true },
     message: { label: "Message or site requirement", required: true },
-    consent: {
-      label: "I agree to be contacted about my enquiry.",
-      privacyFallback:
-        "Privacy and data-use wording — TBD — client. Your details are used only to respond to this enquiry.",
-    },
   },
   propertyTypes: [
     { value: "", label: "Select type (optional)" },
@@ -73,7 +68,6 @@ export const CONTACT_FORM = {
     serviceRequired: "Select a service interest.",
     locationRequired: "Project location is required.",
     messageRequired: "Message or site requirement is required.",
-    consentRequired: "Please agree to be contacted about your enquiry.",
     generic: "Please check the highlighted fields and try again.",
     submitFailed:
       "We could not send your enquiry right now. Please try again or contact us by phone or WhatsApp.",
@@ -102,10 +96,9 @@ export const CONTACT_SIDEBAR = {
   nextTitle: "What happens next",
   nextSteps: [
     "We receive your enquiry and review the details you provide.",
-    "Our team assesses whether a call, site visit, or more information is needed.",
+    "Our team will contact you shortly.",
+    "Our team will carry out a site visit.",
     "We follow up using the contact method you supplied.",
   ],
-  nextNote:
-    "Expected response time and internal notification copy — TBD — client. We do not promise a fixed reply window until the client confirms.",
   whatsappCta: { label: "Chat on WhatsApp" },
 } as const;

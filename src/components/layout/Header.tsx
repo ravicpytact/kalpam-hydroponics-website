@@ -15,7 +15,7 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { phone, email, serviceArea, whatsapp } = SITE_CONTACT;
+  const { phone, email, serviceArea } = SITE_CONTACT;
 
   const path = normalizePath(pathname);
   const isOverlay =
@@ -68,10 +68,6 @@ export function Header() {
   ]
     .filter(Boolean)
     .join(" ");
-
-  const whatsappHref = whatsapp
-    ? `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.openingMessage)}`
-    : null;
 
   return (
     <>
@@ -126,11 +122,6 @@ export function Header() {
                       </span>
                       <span className="site-header__phone-label">{phone.display}</span>
                     </a>
-                  ) : null}
-                  {whatsappHref ? (
-                    <CtaLink href={whatsappHref} variant="secondary">
-                      Chat on WhatsApp
-                    </CtaLink>
                   ) : null}
                   <CtaLink href={HEADER_CTA.href} variant="primary">
                     {HEADER_CTA.label}
@@ -198,11 +189,6 @@ export function Header() {
             <CtaLink href={HEADER_CTA.href} variant="primary" onClick={closeMenu}>
               {HEADER_CTA.label}
             </CtaLink>
-            {whatsappHref ? (
-              <CtaLink href={whatsappHref} variant="secondary" onClick={closeMenu}>
-                Chat on WhatsApp
-              </CtaLink>
-            ) : null}
           </div>
 
           <div className="site-header__panel-contact">

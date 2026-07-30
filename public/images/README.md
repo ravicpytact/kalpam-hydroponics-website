@@ -31,7 +31,7 @@ Drop new files in `development/img/`, then copy into these paths (or ask the age
 
 | Slot | Placeholder path | Replace with |
 | --- | --- | --- |
-| IMG-02 Logos | `shared/logos/kalpam-logo.png` | Header brand (client logo) |
+| IMG-02 Logos | `shared/logos/kalpam-logo.png` only | Header brand + email templates. Client strip uses **text wordmarks** in `HOME_CREDIBILITY.logos` (`ClientLogosMarquee`) — not separate logo image files |
 | Before/After dummy pairs | `home/before-after/dummy-0{1-4}-before.webp` + `-after.webp` | Home before/after compare sliders |
 | Google reviews | copy TBD | Approved review excerpts (not image files) |
 

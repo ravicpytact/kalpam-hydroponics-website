@@ -1,34 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+type BackToTopButtonProps = {
+  visible: boolean;
+};
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-export function BackToTopButton() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > 320);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  if (!visible) {
-    return null;
-  }
-
+export function BackToTopButton({ visible }: BackToTopButtonProps) {
   return (
     <button
       type="button"
-      className="back-to-top"
+      className={`back-to-top${visible ? " is-visible" : ""}`}
       onClick={scrollToTop}
       aria-label="Back to top"
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
     >
       <svg
         className="back-to-top__icon"

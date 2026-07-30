@@ -17,7 +17,6 @@ export type ContactEnquiryInput = {
   serviceInterest: string;
   projectLocation: string;
   message: string;
-  consent: boolean;
   website: string;
 };
 
@@ -74,7 +73,6 @@ export function parseContactEnquiryBody(body: unknown): ContactEnquiryValidation
   const serviceInterest = trimField(raw.serviceInterest, 40);
   const projectLocation = trimField(raw.projectLocation, MAX.projectLocation);
   const message = trimField(raw.message, MAX.message);
-  const consent = raw.consent === true || raw.consent === "true" || raw.consent === "on";
 
   if (!name) {
     return { ok: false, error: "Name is required.", status: 400 };
@@ -102,10 +100,6 @@ export function parseContactEnquiryBody(body: unknown): ContactEnquiryValidation
 
   if (!message) {
     return { ok: false, error: "Message or site requirement is required.", status: 400 };
-  }
-
-  if (!consent) {
-    return { ok: false, error: "Consent is required to submit this enquiry.", status: 400 };
   }
 
   const propertyTypeLabel = propertyType

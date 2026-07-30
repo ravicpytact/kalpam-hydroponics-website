@@ -1,5 +1,5 @@
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
-import { BackToTopButton } from "@/components/layout/BackToTopButton";
+import { StickyFabStack } from "@/components/layout/StickyFabStack";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { PreFooterCta } from "@/components/layout/PreFooterCta";
@@ -40,7 +40,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <PreFooterCta />
         <Footer />
-        <BackToTopButton />
+        <StickyFabStack />
       </body>
     </html>
   );

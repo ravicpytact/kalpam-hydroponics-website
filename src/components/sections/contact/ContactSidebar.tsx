@@ -6,7 +6,7 @@ import { SITE_CONTACT } from "@/lib/site-contact";
 
 export function ContactSidebar() {
   const { phone, email, address, serviceArea, whatsapp, operatingHours } = SITE_CONTACT;
-  const { reachTitle, nextTitle, nextSteps, nextNote, whatsappCta } = CONTACT_SIDEBAR;
+  const { reachTitle, nextTitle, nextSteps, whatsappCta } = CONTACT_SIDEBAR;
 
   const whatsappHref = whatsapp
     ? `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.openingMessage)}`
@@ -71,9 +71,6 @@ export function ContactSidebar() {
             <li key={step.slice(0, 40)}>{step}</li>
           ))}
         </ol>
-        <p className="about-story__note contact-sidebar__note" role="note">
-          {nextNote}
-        </p>
       </div>
     </aside>
   );

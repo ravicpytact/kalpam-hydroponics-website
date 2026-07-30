@@ -11,7 +11,6 @@ import {
   type ContactFormField,
   type ContactFormFieldErrors,
 } from "@/lib/contact-form-validation";
-import { SITE_CONTACT } from "@/lib/site-contact";
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) {
@@ -31,7 +30,6 @@ export function ContactForm() {
   const [formError, setFormError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<ContactFormFieldErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { privacyUrl } = SITE_CONTACT;
 
   function fieldClass(field: ContactFormField, extra = "") {
     const invalid = fieldErrors[field] ? " contact-form__field--invalid" : "";
@@ -122,7 +120,6 @@ export function ContactForm() {
           serviceInterest: values.serviceInterest,
           projectLocation: values.projectLocation,
           message: values.message,
-          consent: values.consent,
           website: data.get("website"),
         }),
       });
@@ -343,39 +340,6 @@ export function ContactForm() {
             }}
           />
           <FieldError id="contact-message-error" message={fieldErrors.message} />
-        </div>
-        <div className={fieldClass("consent", "contact-form__field--checkbox")}>
-          <label htmlFor="contact-consent">
-            <input
-              id="contact-consent"
-              name="consent"
-              type="checkbox"
-              required
-              aria-invalid={Boolean(fieldErrors.consent)}
-              aria-describedby={fieldErrors.consent ? "contact-consent-error" : undefined}
-              onBlur={(event) => {
-                const form = event.currentTarget.form;
-                if (form) handleFieldBlur("consent", form);
-              }}
-              onChange={(event) => {
-                const form = event.currentTarget.form;
-                if (form) handleFieldChange("consent", form);
-              }}
-            />
-            <span>
-              {CONTACT_FORM.fields.consent.label}
-              {privacyUrl ? (
-                <>
-                  {" "}
-                  <a href={privacyUrl} className="contact-form__privacy-link">
-                    Privacy policy
-                  </a>
-                  .
-                </>
-              ) : null}
-            </span>
-          </label>
-          <FieldError id="contact-consent-error" message={fieldErrors.consent} />
         </div>
       </fieldset>
 
